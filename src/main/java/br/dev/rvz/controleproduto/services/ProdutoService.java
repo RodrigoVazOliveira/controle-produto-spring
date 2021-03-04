@@ -32,4 +32,8 @@ public class ProdutoService {
         return null;
     }
 
+    public List<Produto> listarProduto() {
+        return produtos;
+    }
+
 }
