@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/produto/")
 public class ProdutoController {
@@ -17,6 +19,10 @@ public class ProdutoController {
     @PostMapping
     public void cadastrar(Produto produto) {
         service.cadastrar(produto);
+    }
+
+    public List<Produto> mostrarProduto() {
+        return service.listarProduto();
     }
 
 }
