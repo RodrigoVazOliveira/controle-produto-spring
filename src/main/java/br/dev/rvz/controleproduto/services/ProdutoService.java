@@ -8,7 +8,7 @@ import java.util.List;
 
 @Service
 public class ProdutoService {
-    List<Produto> produtos = new ArrayList<>();
+    private List<Produto> produtos = new ArrayList<>();
 
     public void cadastrar(Produto produto) {
         Produto produtoAjustar = verificarSeProdutoExiste(produto);
