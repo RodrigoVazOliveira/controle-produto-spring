@@ -59,10 +59,11 @@ public class ProdutoService {
         excluirProduto(produto);
     }
 
-    public void excluirProduto(Produto produto) {
+    public boolean excluirProduto(Produto produto) {
+        boolean resultado;
         for (Produto obj : produtos) {
             if (obj.getNome().equalsIgnoreCase(produto.getNome())) {
-                produtos.remove(obj);
+                return produtos.remove(obj);
             }
         }
         throw new RuntimeException("Produto não localizado!");
