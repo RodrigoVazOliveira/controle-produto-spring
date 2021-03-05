@@ -36,4 +36,14 @@ public class ProdutoController {
         }
     }
 
+    @DeleteMapping("{name}/")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void excluirProduto(@PathVariable String name) {
+        try {
+            service.excluirProduto(name);
+        } catch (RuntimeException e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
+        }
+    }
+
 }
